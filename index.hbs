@@ -1,14 +1,25 @@
 {{!< default}}
 <main class="main_ashlyn" role="main">
 {{#foreach posts}}
-{{date format='dddd DD MMM YYYY'}}
-{{title}}
+<article class="article_ashlyn" role="article" itemscope itemtype="http://schema.org/Article">
+	
+	<header class="postheader_ashlyn">
+		<time class="date_ashlyn" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='dddd DD MMM YYYY'}}</time>
+		<h1 class="posttitle_ashlyn" itemprop="headline"><a href="{{{url}}}" rel="bookmark">{{title}}</a></h1>
+</header>
+<div class="postjcontent_ashlyn" itemprop="articleBody">
 {{content}}
+</div>
 {{#if tags}}
+<div class="posttags_ashlyn">
 Tags: {{tags separator=" | "}}
+	</div>
 {{/if}}
+</article>
 {{/foreach}}
 {{#if pagination}}
+<div class="pagination_ashlyn">
 {{{pagination}}}
+</div>
 {{/if}}
 </main>
