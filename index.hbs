@@ -1,0 +1,14 @@
+{{!< default}}
+<main class="main_ashlyn" role="main">
+{{#foreach posts}}
+{{date format='dddd DD MMM YYYY'}}
+{{title}}
+{{content}}
+{{#if tags}}
+Tags: {{tags separator=" | "}}
+{{/if}}
+{{/foreach}}
+{{#if pagination}}
+{{{pagination}}}
+{{/if}}
+</main>
